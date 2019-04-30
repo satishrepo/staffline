@@ -1,0 +1,12 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "loose": false,
+                "modules": "commonjs",
+                "debug": false
+            }
+        ]
+    ]
+}
