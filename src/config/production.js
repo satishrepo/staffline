@@ -1,9 +1,8 @@
 module.exports = {
-
     /**
-    * port setting
-    */
-    PORT: process.env.PORT || 9001,
+     * port setting
+     */
+    PORT: process.env.PORT || 9005,
 
     /**
      * redis cache configuration
@@ -22,15 +21,16 @@ module.exports = {
      * authorization key for api access permission
      */
     apiAccessToken: 'StaffLine@2017',
+
     /**
-   * API hostUrl
-   */
-    apiHostUrl: 'https://api.stafflinepro.com',
+     * API hostUrl
+     */
+    apiHostUrl: 'https://pre-api.stafflinepro.com',
 
     /**
      * ui hostUrl
      */
-    uiHostUrl: 'http://app.stafflinepro.com',
+    uiHostUrl: 'https://pre.stafflinepro.com',
 
     /**
      * file upload hostUrl
@@ -43,8 +43,8 @@ module.exports = {
     accountActivationUrl: '/verify-account',
 
     /**
-    * password reset link on social media welcome email
-    */
+     * password reset link on social media welcome email
+     */
     socialMediaPasswordChange: '/set-password',
 
     /**
@@ -53,37 +53,42 @@ module.exports = {
     imageFolder: 'stafflineDocuments',
 
     /**
-     * contactUs To email-address
+     * dashboard contactUs To email-address
      */
     contactUsToEmail: 'passport@compunnel.net',//'sam.handa@compunnel.com',
+
     /**
-    * Email will be received on following email when error occurred 
-    */
-    errorReportEmail: 'satish.purohit@compunnel.in, ajay.singh@compunnel.com',
+     * Email will be received on following email when error occurred 
+     */
+    errorReportEmail: 'satish.purohit@compunnel.in', //, puja.kumari@compunnel.in',
 
     /**
      * thirt party api url domain name (to upload document and get matching jobs)
      */
-    thirdPartyApiUrl: 'http://stafflineapi.compunnel.com',
-    thirdPartyMatchingJobsApiUrl: 'http://stafflineapi.compunnel.com',//'http://638d8ecc.ngrok.io',
+    thirdPartyApiUrl: 'http://stafflineapi-beta.compunnel.com',
+    thirdPartyMatchingJobsApiUrl: 'http://stafflineapi-beta.compunnel.com',//'http://638d8ecc.ngrok.io',
     uploadEndpoint: '/document/upload',
     hsDocCreatedEndPoint: '/onboardingDocument/Upload',
     matchingJobEndpoint: '/job/matchingjobs',
     thirdPartyApiUrlToken: 'qwerty~!@',
 
-    thirdPartyResumeSearchApiUrl: 'http://rs.iendorseu.com/mapi/candidate/create',
-    thirdPartyResumeSearchApiUrlToken: 'sda43WfR797sWQE',
+    thirdPartyResumeSearchApiUrl:'http://rs.iendorseu.com/mapi/candidate/create',
+    thirdPartyResumeSearchApiUrlToken:'sda43WfR797sWQE',
 
 
-    thirdPartyResumeParaseUrl:'http://stafflineapi.compunnel.com/parser/proupdatecandidate',
-    thirdPartyEmailApiUrl:'http://stafflineapi.compunnel.com/mail/sendmail',
+    // thirdPartyResumeParaseUrl:'http://stafflineapi-beta.compunnel.com/parser/updatecandidate',
+    thirdPartyResumeParaseUrl:'http://stafflineapi-beta.compunnel.com/parser/proupdatecandidate',
+    thirdPartyEmailApiUrl:'http://stafflineapi-beta.compunnel.com/mail/sendmail',
+    // thirdPartyEmailApiUrl:'http://10.1.4.100/Staffing/mail/sendmail', // for localhost only [ pointed to sanjeev's system ]
+
+
 
     /**
      * thirt party host url to show file path
      */
-    resumeHostUrl: 'https://staffline.compunnel.com',
-    documentHostUrl: 'https://staffline.compunnel.com', // 'https://portal-beta.compunnel.com', 
-    portalHostUrl: 'https://portal.compunnel.com',
+    resumeHostUrl: 'https://staffline-beta.compunnel.com',
+    documentHostUrl: 'https://staffline-beta.compunnel.com', // 'https://portal-beta.compunnel.com', 
+    portalHostUrl: 'https://portal-beta.compunnel.com',
     documentBasePath: '/Upload',
 
     /**
@@ -92,13 +97,14 @@ module.exports = {
     otpExpireDuration: 5,
 
     /**
-   * database configuration
-   */
-     db: {
-        host: '10.1.12.121',
-        dbname: 'CSG_2001',
-        username: 'csgdbuser',
-        password: 'dbPa$$@123',
+     * database configuration
+     */
+    
+    db: {
+        host: '52.1.39.186',
+        dbname: 'CSG_2001_Staging',
+        username: 'atsstaging',
+        password: 'atsstaging',
         instance: '',
         connectionTimeout: 300000,
         requestTimeout: 900000,
@@ -107,13 +113,11 @@ module.exports = {
             max: 100
         }
     },
-
-
     /**
     * load application environment
     */
     loadConfig: function loadConfig() {
-        let node_env = (process.env.NODE_ENV || 'production'),
+        let node_env = (process.env.NODE_ENV || 'localhost'),
             config = require('./' + node_env);
         config.node_env = config.NODE_ENV = node_env;
 
@@ -177,7 +181,6 @@ module.exports = {
             pass: "Apv0Dy5tDh9fv5YE2haqnpNngheTtXdU5xBCJAfuSFwu"
         }
     },
-
     /**
      * download forms domain name
      */
@@ -186,8 +189,8 @@ module.exports = {
     },
 
     /**
-    * contactUs To email-address
-    */
+   * contactUs To email-address
+   */
     contactUsToEmailId: 'passport@compunnel.net',//'portalsupport@compunnel.com',
 
     /**
@@ -198,7 +201,7 @@ module.exports = {
     /**
      * Emails will be send to these email-addresses in qa and develovepment environment
      */
-    testEnvToEmail: 'puja.kumari@compunnel.in, sharads@compunnel.com, rpapnoi@compunnel.com, jay.singh@compunnel.com, ajay.singh@compunnel.com, satish.purohit@compunnel.in',
+    testEnvToEmail: 'satish.purohit@compunnel.in',
 
     /**
     * API header should contain following parameters
@@ -214,19 +217,33 @@ module.exports = {
         'GeoLong' : 'optional'        
     },
     jobUrl: {
-        similarJob: 'https://rs.iendorseu.com/search/_a/job/similar/',
-        matchingJob: 'https://rs.iendorseu.com/search/_a/job/matching/',
+        similarJob: 'https://rs.iendorseu.com/_a/job/similar/',
+        matchingJob: 'https://rs.iendorseu.com/_a/job/matching/',
         secretKey: 'sda43WfR797sWQE'
     },
 
+    
+    helloSign_live : {
+        apiKey : '',
+        clientId : ''
+    },
+    
+
     helloSign : {
-        apiKey : '8f0379670943cdbbcb029a9c9bb5fc772d999a8d51b2659cd89967715327d17b',
-        clientId : 'a7015b87051f5577cf423d6420a0e435'
+        apiKey : '',
+        clientId : ''
     },
 
     api_versions : {
       '/api' : {path : '/v1', inUse : true, nextVerAvailable : 'v2'},
       '/v1/api' : {path : '/v1', inUse : true, nextVerAvailable : 'v2'},
-      '/v2/api' : {path : '/v2', inUse : true}
+      '/v2/api' : {path : '/v2', inUse : true, nextVerAvailable : 'v3'},
+      '/v3/api' : {path : '/v3', inUse : true},
+      '/v4/api' : {path : '/v4', inUse : true},
+      '/v5/api' : {path : '/v5', inUse : true},
+      '/v6/api' : {path : '/v6', inUse : true}
     }
+
+    
+
 }

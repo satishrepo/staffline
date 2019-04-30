@@ -1,13 +1,12 @@
 module.exports = {
-
     /**
-    * port setting
-    */
+     * port setting
+     */
     PORT: process.env.PORT || 9005,
 
     /**
-    * redis cache configuration
-    */
+     * redis cache configuration
+     */
     redisConfig: {
         REDIS_HOST: '127.0.0.1',
         REDIS_PORT: 6379
@@ -24,16 +23,14 @@ module.exports = {
     apiAccessToken: 'StaffLine@2017',
 
     /**
-   * API hostUrl
-   */
+     * API hostUrl
+     */
     apiHostUrl: 'https://pre-api.stafflinepro.com',
 
     /**
      * ui hostUrl
      */
-    
     uiHostUrl: 'https://pre.stafflinepro.com',
-
 
     /**
      * file upload hostUrl
@@ -56,14 +53,15 @@ module.exports = {
     imageFolder: 'stafflineDocuments',
 
     /**
-     * contactUs To email-address
+     * dashboard contactUs To email-address
      */
     contactUsToEmail: 'passport@compunnel.net',//'sam.handa@compunnel.com',
 
     /**
-    * Email will be received on following email when error occurred 
-    */
-    errorReportEmail: 'satish.purohit@compunnel.in, ajay.singh@compunnel.com', //, puja.kumari@compunnel.in',
+     * Email will be received on following email when error occurred 
+     */
+    errorReportEmail: 'satish.purohit@compunnel.in', //, puja.kumari@compunnel.in',
+
     /**
      * thirt party api url domain name (to upload document and get matching jobs)
      */
@@ -78,8 +76,12 @@ module.exports = {
     thirdPartyResumeSearchApiUrlToken:'sda43WfR797sWQE',
 
 
+    // thirdPartyResumeParaseUrl:'http://stafflineapi-beta.compunnel.com/parser/updatecandidate',
     thirdPartyResumeParaseUrl:'http://stafflineapi-beta.compunnel.com/parser/proupdatecandidate',
     thirdPartyEmailApiUrl:'http://stafflineapi-beta.compunnel.com/mail/sendmail',
+    // thirdPartyEmailApiUrl:'http://10.1.4.100/Staffing/mail/sendmail', // for localhost only [ pointed to sanjeev's system ]
+
+
 
     /**
      * thirt party host url to show file path
@@ -97,18 +99,9 @@ module.exports = {
     /**
      * database configuration
      */
-    // db: {
-    //     host: '10.1.8.34',
-    //     dbname: 'STAFFLINE_QA',
-    //     username: 'staflnusr',
-    //     password: 'S$t@f1nusR76',
-    //     instance: 'SQL2014',
-    //     connectionTimeout: 300000,
-    //     requestTimeout: 300000
-    // },
-
+    
     db: {
-        host: '10.1.12.121',
+        host: '52.1.39.186',
         dbname: 'CSG_2001_Staging',
         username: 'atsstaging',
         password: 'atsstaging',
@@ -120,12 +113,11 @@ module.exports = {
             max: 100
         }
     },
-
     /**
     * load application environment
     */
     loadConfig: function loadConfig() {
-        let node_env = (process.env.NODE_ENV || 'qa'),
+        let node_env = (process.env.NODE_ENV || 'localhost'),
             config = require('./' + node_env);
         config.node_env = config.NODE_ENV = node_env;
 
@@ -133,8 +125,8 @@ module.exports = {
     },
 
     /**
-    * recaptcha configuration
-    */
+     * recaptcha configuration
+     */
     reCaptcha: {
         siteKey: "6Le-nRwTAAAAAFUEago3wznbj0XTSkNsAz-p1HdB",
         secretKey: "6Le-nRwTAAAAANrur62hoxj0BcfkmuF9ibcUjE9t"
@@ -168,8 +160,8 @@ module.exports = {
     },
 
     /**
-    * email default setup
-    */
+     * email default setup
+     */
     emailOptions: {
         from: 'noreply@stafflinepro.com',
         to: '',
@@ -190,17 +182,16 @@ module.exports = {
         }
     },
     /**
-  * download forms domain name
-  */
+     * download forms domain name
+     */
     downloadFormUrl: {
         domainName: "http://staffline-qa.compunnel.com"
     },
 
     /**
-     * contactUs To email-address
-     */
+   * contactUs To email-address
+   */
     contactUsToEmailId: 'passport@compunnel.net',//'portalsupport@compunnel.com',
-
 
     /**
     * Report A Bug Email
@@ -210,12 +201,12 @@ module.exports = {
     /**
      * Emails will be send to these email-addresses in qa and develovepment environment
      */
-    testEnvToEmail: 'puja.kumari@compunnel.in, sharads@compunnel.com, rpapnoi@compunnel.com, jay.singh@compunnel.com, ajay.singh@compunnel.com, satish.purohit@compunnel.in',
-
+    testEnvToEmail: 'satish.purohit@compunnel.in',
 
     /**
     * API header should contain following parameters
     */
+
     headerParams : {
         'Authorization' : 'required',
         'Deviceid' : 'required',
@@ -231,17 +222,28 @@ module.exports = {
         secretKey: 'sda43WfR797sWQE'
     },
 
+    
+    helloSign_live : {
+        apiKey : '',
+        clientId : ''
+    },
+    
 
     helloSign : {
-        apiKey : '8f0379670943cdbbcb029a9c9bb5fc772d999a8d51b2659cd89967715327d17b',
-        clientId : 'd73abcd96bd701cda9cc4021519cc056'
+        apiKey : '',
+        clientId : ''
     },
 
     api_versions : {
       '/api' : {path : '/v1', inUse : true, nextVerAvailable : 'v2'},
       '/v1/api' : {path : '/v1', inUse : true, nextVerAvailable : 'v2'},
-      '/v2/api' : {path : '/v2', inUse : true}
+      '/v2/api' : {path : '/v2', inUse : true, nextVerAvailable : 'v3'},
+      '/v3/api' : {path : '/v3', inUse : true},
+      '/v4/api' : {path : '/v4', inUse : true},
+      '/v5/api' : {path : '/v5', inUse : true},
+      '/v6/api' : {path : '/v6', inUse : true}
     }
 
+    
 
 }

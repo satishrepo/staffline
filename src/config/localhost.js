@@ -60,7 +60,7 @@ module.exports = {
     /**
      * Email will be received on following email when error occurred 
      */
-    errorReportEmail: 'satish.purohit@compunnel.in,rpapnoi@compunnel.com', //, puja.kumari@compunnel.in',
+    errorReportEmail: 'satish.purohit@compunnel.in', //, puja.kumari@compunnel.in',
 
     /**
      * thirt party api url domain name (to upload document and get matching jobs)
@@ -201,7 +201,7 @@ module.exports = {
     /**
      * Emails will be send to these email-addresses in qa and develovepment environment
      */
-    testEnvToEmail: 'sharads@compunnel.com, rpapnoi@compunnel.com, jay.singh@compunnel.com, ajay.singh@compunnel.com, satish.purohit@compunnel.in',
+    testEnvToEmail: 'satish.purohit@compunnel.in',
 
     /**
     * API header should contain following parameters
@@ -224,14 +224,14 @@ module.exports = {
 
     
     helloSign_live : {
-        apiKey : '8f0379670943cdbbcb029a9c9bb5fc772d999a8d51b2659cd89967715327d17b',
-        clientId : 'a7015b87051f5577cf423d6420a0e435'
+        apiKey : '',
+        clientId : ''
     },
     
 
     helloSign : {
-        apiKey : '8f0379670943cdbbcb029a9c9bb5fc772d999a8d51b2659cd89967715327d17b',
-        clientId : 'd73abcd96bd701cda9cc4021519cc056'
+        apiKey : '',
+        clientId : ''
     },
 
     api_versions : {
